@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { students } from "../../entity/data";
 
 export default function RecentStudents() {
@@ -11,8 +12,11 @@ export default function RecentStudents() {
             <ul className="list-group">
                 {recent.map((student) => (
                     <li key={student.id} className="list-group-item d-flex justify-content-between align-items-center">
-                        <span>
+                        {/* <span>
                             <strong>{student.name}</strong> ({student.class})
+                        </span> */}
+                        <span>
+                            <Link to={`/students/${student.id}`}>{student.name}</Link> - {student.class}
                         </span>
                         <span className="badge bg-primary rounded-pill">
                             {new Date(student.createdAt).toLocaleDateString()}

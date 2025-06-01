@@ -1,15 +1,27 @@
+// src/router.tsx
 import { createBrowserRouter } from "react-router-dom";
+import Login from "../pages/auth/Login";
+import ProtectedRoute from "../components/ProtectedRoute";
 import RootLayout from "../layouts/RootLayout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import StudentsList from "../pages/students/StudentsList";
-import NotFound from "../pages/NotFound";
 import StudentDetail from "../pages/students/StudentsDetail";
 import StudentForm from "../pages/students/StudentForm";
+import Profile from "../pages/account/Profile";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
     {
+        path: "/login",
+        element: <Login />,
+    },
+    {
         path: "/",
-        element: <RootLayout />, // layout chính
+        element: (
+            <ProtectedRoute>
+                <RootLayout />
+            </ProtectedRoute>
+        ),
         children: [
             {
                 index: true,
@@ -35,6 +47,10 @@ const router = createBrowserRouter([
                         element: <StudentForm />,
                     },
                 ],
+            },
+            {
+                path: "profile",
+                element: <Profile />,
             },
         ],
     },
