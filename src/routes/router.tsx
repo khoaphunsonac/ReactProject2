@@ -9,6 +9,7 @@ import StudentDetail from "../pages/students/StudentsDetail";
 import StudentForm from "../pages/students/StudentForm";
 import Profile from "../pages/account/Profile";
 import NotFound from "../pages/NotFound";
+import About from "../pages/About";
 
 const router = createBrowserRouter([
     {
@@ -52,8 +53,13 @@ const router = createBrowserRouter([
                 path: "profile",
                 element: <Profile />,
             },
+            {
+                path: "about",
+                element: <About />,
+            }
         ],
     },
+
     {
         path: "*",
         element: <NotFound />,

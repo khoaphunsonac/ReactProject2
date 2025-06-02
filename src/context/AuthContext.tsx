@@ -1,9 +1,11 @@
 // src/context/AuthContext.tsx
-import { createContext, useContext, useState,type ReactNode, useEffect } from "react";
+import { createContext, useContext, useState, type ReactNode, useEffect } from "react";
 
 interface User {
-    username: string;
-    // có thể thêm email, token, roles, ...
+    name: string;
+    email: string;
+    role?: string;
+    createdAt?: string;
 }
 
 interface AuthContextType {
@@ -23,15 +25,28 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         if (storedUser) setUser(JSON.parse(storedUser));
     }, []);
 
-    const login = async (username: string, password: string) => {
-        // MOCK: validate username/password
-        // TODO: Thay bằng call API thật
-        if (username === "admin" && password === "123456") {
-            const loggedUser = { username };
-            setUser(loggedUser);
-            localStorage.setItem("user", JSON.stringify(loggedUser));
+    const login = async (email: string, password: string): Promise<boolean> => {
+        // Đây là ví dụ - bạn nên thay bằng API thật hoặc xác thực backend
+        if (email === "admin" && password === "12345") {
+            setUser({
+                name: "Quản trị viên",
+                email,
+                role: "Admin",
+                createdAt: "2024-01-01",
+            });
+            // Lưu user vào localStorage để giữ đăng nhập khi reload
+            localStorage.setItem(
+                "user",
+                JSON.stringify({
+                    name: "Quản trị viên",
+                    email,
+                    role: "Admin",
+                    createdAt: "2024-01-01",
+                })
+            );
             return true;
         }
+
         return false;
     };
 

@@ -12,7 +12,6 @@ export default function RootLayout() {
 
     return (
         <div className="d-flex flex-column min-vh-100">
-            {/* Navbar */}
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
                 <div className="container">
                     <NavLink className="navbar-brand fw-bold" to="/">
@@ -39,6 +38,14 @@ export default function RootLayout() {
                                     end
                                 >
                                     Dashboard
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    className={({ isActive }) => "nav-link" + (isActive ? " active fw-bold" : "")}
+                                    to="/about"
+                                >
+                                    About
                                 </NavLink>
                             </li>
                             <li className="nav-item">
