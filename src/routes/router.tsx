@@ -1,6 +1,5 @@
 // src/router.tsx
-import {  createHashRouter } from "react-router-dom";
-// import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/auth/Login";
 import ProtectedRoute from "../components/ProtectedRoute";
 import RootLayout from "../layouts/RootLayout";
@@ -12,7 +11,7 @@ import Profile from "../pages/account/Profile";
 import NotFound from "../pages/NotFound";
 import About from "../pages/About";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login />,
