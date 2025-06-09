@@ -29,10 +29,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         // Đây là ví dụ - bạn nên thay bằng API thật hoặc xác thực backend
         if (email === "admin" && password === "12345") {
             setUser({
-                name: "Quản trị viên",
-                email,
-                role: "Admin",
-                createdAt: "2024-01-01",
+                name: "Trần Đăng Khoa",
+                email: "trandangkhoa020704@gmail.com",
+                role: "Quản trị viên",
+                createdAt: "2025-09-06",
             });
             // Lưu user vào localStorage để giữ đăng nhập khi reload
             localStorage.setItem(
