@@ -38,10 +38,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             localStorage.setItem(
                 "user",
                 JSON.stringify({
-                    name: "Quản trị viên",
-                    email,
-                    role: "Admin",
-                    createdAt: "2024-01-01",
+                    name: "Trần Đăng Khoa",
+                    email: "trandangkhoa020704@gmail.com",
+                    role: "Quản trị viên",
+                    createdAt: "2025-09-06",
                 })
             );
             return true;

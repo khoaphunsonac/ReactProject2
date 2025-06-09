@@ -43,7 +43,7 @@ export default function Profile() {
                                 </tr>
                                 <tr>
                                     <th scope="row">Ngày tham gia:</th>
-                                    <td>{user.createdAt || "01/01/2025"}</td>
+                                    <td>{user.createdAt}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Trạng thái:</th>
